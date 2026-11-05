@@ -63,13 +63,21 @@ export default function App() {
     return () => window.removeEventListener('keydown', onKey);
   }, [book.settled, i]);
 
-  // Page-turn fade
+  // Page turn: move focus to the new page, then fade it in
   const leftRef = useRef(null), rightRef = useRef(null), fullRef = useRef(null);
   const prevIdx = useRef(i);
   useEffect(() => {
     const from = prevIdx.current;
     prevIdx.current = i;
-    if (from === i || !book.settled || reduced) return;
+    if (from === i || !book.settled) return;
+    // The link that was clicked is gone, so focus would fall back to <body>.
+    // Land keyboard and screen reader users on the new page's heading instead.
+    const target = fullRef.current || leftRef.current?.querySelector('h1');
+    if (target) {
+      target.setAttribute('tabindex', '-1');
+      target.focus({ preventScroll: true });
+    }
+    if (reduced) return;
     const dir = i >= from ? 1 : -1;
     [leftRef, rightRef, fullRef].forEach((r, j) => r.current?.animate?.(
       [{ opacity: 0, transform: `translateX(${dir * 16}px)` }, { opacity: 1, transform: 'none' }],
@@ -109,21 +117,29 @@ export default function App() {
         onKeyDown={(e) => { if (!opened && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openBook(false); } }}
       >
         <div className="spread">
-          <section className="page page--left" aria-label="Left page">
+          <div className="page page--left">
             <div ref={leftRef} className="page__inner">
               <LeftPage lp={sp.l} />
             </div>
-            <span className="page__num mono">p. {2 * i + 1}</span>
-          </section>
-          <section className="page page--right" aria-label="Right page">
+            <span className="page__num mono" aria-hidden="true">p. {2 * i + 1}</span>
+          </div>
+          <div className="page page--right">
             <div ref={rightRef} className="page__inner">
               <RightPage rp={sp.r} />
             </div>
-            <span className="page__num mono">p. {2 * i + 2}</span>
-          </section>
+            <span className="page__num mono" aria-hidden="true">p. {2 * i + 2}</span>
+          </div>
         </div>
 
-        {sp.full && <FullSpread key={sp.key} ref={fullRef} full={sp.full} narrow={narrow} />}
+        {sp.full && (
+          <FullSpread
+            key={sp.key}
+            ref={fullRef}
+            full={sp.full}
+            narrow={narrow}
+            label={`${sp.chapter}: ${sp.full.slider ? 'before and after' : sp.full.cap || 'screens'}`}
+          />
+        )}
 
         <Cover opened={opened} />
 

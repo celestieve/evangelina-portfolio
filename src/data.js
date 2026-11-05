@@ -11,7 +11,8 @@ export const SITE = {
   github: 'https://github.com/celestieve',
 };
 
-const IMG = (k, n) => asset(`${k}-${n}.jpg`);
+// Images come from `npm run images` (originals live in images/)
+const IMG = (k, n) => asset(`${k}-${n}.webp`);
 const P = (arr) => arr.map(([h, t]) => ({ h, t }));
 
 export const ROTS = ['-1.2deg', '1deg', '-.6deg', '1.4deg', '-1deg', '.8deg', '-1.4deg'];
@@ -102,10 +103,6 @@ export const EXPERIENCE = [
   { org: 'University of Alabama at Birmingham', when: '2021 → 2025', role: 'B.A. Computer Science · Minors in Marketing & Studio Art' },
 ];
 
-// Studio art frames. Drop images into public/assets and set `src` (e.g. asset('studio-1.jpg')).
-const STUDIO_ART = ['charcoal study', 'color study', 'still life', 'printmaking', 'figure drawing', 'final critique piece', 'sketchbook page', 'watercolor']
-  .map((cap, i) => ({ id: `studio-${i + 1}`, cap, src: null, rot: ROTS[(i + 2) % ROTS.length] }));
-
 /* ---------- Spreads (each "page turn" of the sketchbook) ----------
    l / r  = left / right page content (type flags + data)
    full   = a spread that spans both pages (slider or image gallery) */
@@ -114,7 +111,7 @@ const add = (base, chapter, l, r, full) => {
   const k = SPREADS.filter((s) => s.base === base).length;
   SPREADS.push({ base, chapter, key: k ? `${base}/${k + 1}` : base, l: l || {}, r: r || {}, full: full || null });
 };
-const gallery = (f) => ({ cap: '', L: [], R: [], Lslots: [], Rslots: [], imgH: '32cqh', ...f });
+const gallery = (f) => ({ cap: '', L: [], R: [], imgH: '32cqh', ...f });
 
 add('', 'contents', { toc: true }, { collage: true });
 
@@ -135,8 +132,7 @@ add('studio', 'graphics', { studioIntro: true },
 add('studio', 'graphics', null, null, gallery({ cap: '2024 – 2025 · reveal series', L: [V(1, '-1.5deg'), V(3, '1deg')], R: [V(4, '1.2deg'), V(5, '-1deg')] }));
 add('studio', 'graphics', null, null, gallery({ cap: '2023 – 2025 · reveal series', L: [V(6, '1deg'), V(7, '-1.4deg')], R: [V(8, '-.8deg'), V(9, '1.3deg')] }));
 add('studio', 'graphics', null, null, gallery({ cap: 'side projects · UAB', imgH: '50cqh',
-  L: [{ src: asset('nexo-1.jpg'), alt: 'Nexo', bg: '#fff', rot: '-1.2deg', cap: 'Nexo: senior capstone. Calendar, tasks and notes in one app. Team lead + React/Firebase.' }],
-  R: [{ src: asset('mixify-1.jpg'), alt: 'Mixify', bg: '#fff', rot: '1deg', cap: 'Mixify: genre-based playlists on the Spotify API. Team lead, design + Vue.' }] }));
-add('studio', 'graphics', null, null, gallery({ cap: 'off the screen · studio art, UAB', Lslots: STUDIO_ART.slice(0, 4), Rslots: STUDIO_ART.slice(4, 8) }));
+  L: [{ src: asset('nexo-1.webp'), alt: 'Nexo', bg: '#fff', rot: '-1.2deg', cap: 'Nexo: senior capstone. Calendar, tasks and notes in one app. Team lead + React/Firebase.' }],
+  R: [{ src: asset('mixify-1.webp'), alt: 'Mixify', bg: '#fff', rot: '1deg', cap: 'Mixify: genre-based playlists on the Spotify API. Team lead, design + Vue.' }] }));
 
 add('about', 'about', { aboutL: true }, { aboutR: true });

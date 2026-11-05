@@ -31,8 +31,7 @@ const ROUTES = [
   { name: '05-graphics', hash: '#/studio' },
   { name: '06-graphics-gallery', hash: '#/studio/2' },
   { name: '07-side-projects', hash: '#/studio/4' },
-  { name: '08-studio-art', hash: '#/studio/5' },
-  { name: '09-about', hash: '#/about' },
+  { name: '08-about', hash: '#/about' },
 ];
 
 const browser = await chromium.launch();

@@ -1,0 +1,236 @@
+{
+  "calendar-1": {
+    "width": 1600,
+    "height": 735,
+    "small": 800
+  },
+  "calendar-4": {
+    "width": 1600,
+    "height": 900,
+    "small": 800
+  },
+  "calendar-5": {
+    "width": 1600,
+    "height": 900,
+    "small": 800
+  },
+  "calendar-6": {
+    "width": 1600,
+    "height": 900,
+    "small": 800
+  },
+  "calendar-7": {
+    "width": 1600,
+    "height": 900,
+    "small": 800
+  },
+  "mixify-1": {
+    "width": 1600,
+    "height": 665,
+    "small": 800
+  },
+  "nexo-1": {
+    "width": 1600,
+    "height": 665,
+    "small": 800
+  },
+  "onboarding-1": {
+    "width": 1191,
+    "height": 744,
+    "small": 800
+  },
+  "onboarding-2": {
+    "width": 1600,
+    "height": 900,
+    "small": 800
+  },
+  "onboarding-4": {
+    "width": 1370,
+    "height": 1530,
+    "small": 800
+  },
+  "onboarding-5": {
+    "width": 1384,
+    "height": 1398,
+    "small": 800
+  },
+  "onboarding-6": {
+    "width": 1408,
+    "height": 1054,
+    "small": 800
+  },
+  "portrait": {
+    "width": 131,
+    "height": 166
+  },
+  "rounds-1": {
+    "width": 1600,
+    "height": 737,
+    "small": 800
+  },
+  "rounds-4": {
+    "width": 1600,
+    "height": 900,
+    "small": 800
+  },
+  "rounds-5": {
+    "width": 1600,
+    "height": 900,
+    "small": 800
+  },
+  "rounds-6": {
+    "width": 1600,
+    "height": 900,
+    "small": 800
+  },
+  "rounds-7": {
+    "width": 1600,
+    "height": 900,
+    "small": 800
+  },
+  "vdrive-1": {
+    "width": 1600,
+    "height": 739,
+    "small": 800
+  },
+  "vdrive-2": {
+    "width": 1600,
+    "height": 900,
+    "small": 800
+  },
+  "vdrive-3": {
+    "width": 1600,
+    "height": 900,
+    "small": 800
+  },
+  "vdrive-4": {
+    "width": 1600,
+    "height": 900,
+    "small": 800
+  },
+  "vdrive-5": {
+    "width": 1600,
+    "height": 900,
+    "small": 800
+  },
+  "vfax-1": {
+    "width": 1600,
+    "height": 737,
+    "small": 800
+  },
+  "vfax-3": {
+    "width": 1600,
+    "height": 911,
+    "small": 800
+  },
+  "vfax-4": {
+    "width": 1600,
+    "height": 913,
+    "small": 800
+  },
+  "vfax-5": {
+    "width": 1600,
+    "height": 900,
+    "small": 800
+  },
+  "vfax-6": {
+    "width": 1600,
+    "height": 915,
+    "small": 800
+  },
+  "vmail-1": {
+    "width": 1600,
+    "height": 736,
+    "small": 800
+  },
+  "vmail-2": {
+    "width": 1600,
+    "height": 900,
+    "small": 800
+  },
+  "vmail-3": {
+    "width": 1600,
+    "height": 900,
+    "small": 800
+  },
+  "vmail-4": {
+    "width": 1600,
+    "height": 900,
+    "small": 800
+  },
+  "vmail-5": {
+    "width": 1600,
+    "height": 900,
+    "small": 800
+  },
+  "vsa-1": {
+    "width": 1600,
+    "height": 1003,
+    "small": 800
+  },
+  "vsa-2": {
+    "width": 1600,
+    "height": 1095,
+    "small": 800
+  },
+  "vsa-3": {
+    "width": 1600,
+    "height": 1056,
+    "small": 800
+  },
+  "vsa-4": {
+    "width": 1600,
+    "height": 1114,
+    "small": 800
+  },
+  "vsa-5": {
+    "width": 1600,
+    "height": 1142,
+    "small": 800
+  },
+  "vsa-6": {
+    "width": 1600,
+    "height": 1127,
+    "small": 800
+  },
+  "vsa-7": {
+    "width": 1600,
+    "height": 953,
+    "small": 800
+  },
+  "vsa-8": {
+    "width": 1600,
+    "height": 1061,
+    "small": 800
+  },
+  "vsa-9": {
+    "width": 1560,
+    "height": 1140,
+    "small": 800
+  },
+  "vtask-1": {
+    "width": 1600,
+    "height": 672,
+    "small": 800
+  },
+  "vtask-3": {
+    "width": 1600,
+    "height": 900,
+    "small": 800
+  },
+  "vtask-4": {
+    "width": 1600,
+    "height": 900,
+    "small": 800
+  },
+  "vtask-5": {
+    "width": 1600,
+    "height": 900,
+    "small": 800
+  },
+  "vtask-6": {
+    "width": 1600,
+    "height": 900,
+    "small": 800
+  }
+}

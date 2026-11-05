@@ -7,14 +7,20 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "screenshots": "node scripts/responsive-check.mjs"
+    "screenshots": "node scripts/responsive-check.mjs",
+    "images": "node scripts/optimize-images.mjs"
   },
   "dependencies": {
+    "@fontsource/caveat": "^5.3.0",
+    "@fontsource/courier-prime": "^5.3.0",
+    "@fontsource/work-sans": "^5.3.0",
+    "@fontsource/young-serif": "^5.3.0",
     "react": "18.3.1",
     "react-dom": "18.3.1"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "4.3.4",
+    "sharp": "^0.35.5",
     "vite": "5.4.11"
   }
 }

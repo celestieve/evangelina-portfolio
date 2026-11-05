@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import Img from './Img.jsx';
 
 export default function CompareSlider({ title, before, after }) {
   const [pos, setPos] = useState(50);
@@ -40,9 +41,9 @@ export default function CompareSlider({ title, before, after }) {
           onPointerUp={() => { dragging.current = false; }}
           onPointerCancel={() => { dragging.current = false; }}
         >
-          <img src={after} alt={`${title} after the redesign`} draggable="false" className="compare__img" />
+          <Img src={after} sizes="(max-width: 760px) 100vw, 80vw" alt={`${title} after the redesign`} draggable="false" className="compare__img" />
           <div className="compare__before" style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}>
-            <img src={before} alt={`${title} before the redesign`} draggable="false" className="compare__img" />
+            <Img src={before} sizes="(max-width: 760px) 100vw, 80vw" alt={`${title} before the redesign`} draggable="false" className="compare__img" />
           </div>
           <div className="compare__handle" style={{ left: `${pos}%` }}><div className="compare__knob">⇆</div></div>
           <span className="compare__tag compare__tag--before">BEFORE</span>

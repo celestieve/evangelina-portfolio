@@ -29,6 +29,8 @@ html, body { margin: 0; background: var(--desk); -webkit-font-smoothing: antiali
 a { color: inherit; text-decoration: none; }
 a:hover { color: var(--violet); }
 a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--violet); outline-offset: 3px; }
+/* Page-turn focus targets: focus is moved there for screen readers, no ring needed */
+h1[tabindex="-1"]:focus, .full:focus { outline: none; }
 img { display: block; max-width: 100%; }
 ::selection { background: var(--lilac); color: #1D2744; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
@@ -218,11 +220,6 @@ img { display: block; max-width: 100%; }
 .half__item { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 1.6cqh; max-width: 100%; min-height: 0; }
 .half__img { max-width: 100%; width: auto; height: auto; }
 .half__cap { font-size: clamp(18px, 3.6cqh, 28px); text-align: center; max-width: 30ch; transform: rotate(-1deg); }
-.slots { display: grid; grid-template-columns: 1fr 1fr; gap: 4cqh 8%; width: 100%; max-width: 64cqh; }
-.slot { position: relative; background: #fff; padding: 1cqh 1cqh .3cqh; box-shadow: var(--shadow-photo); pointer-events: auto; }
-.slot__frame { aspect-ratio: 4 / 5; overflow: hidden; display: flex; align-items: center; justify-content: center; background: repeating-linear-gradient(135deg, #F3EEE1 0 8px, #EDE6D4 8px 16px); }
-.slot__empty { font-family: var(--f-mono); font-size: 11px; color: var(--sage); text-align: center; padding: 8px; }
-.slot__cap { color: var(--ink); font-weight: 500; font-size: clamp(15px, 2.8cqh, 22px); text-align: center; }
 
 /* ---------- cover ---------- */
 .cover {
@@ -299,7 +296,6 @@ img { display: block; max-width: 100%; }
 .is-narrow .half__item { width: 100%; }
 .is-narrow .half__item .photo { width: 100%; }
 .is-narrow .half__img { width: 100%; max-height: none !important; }
-.is-narrow .slots { max-width: 100%; gap: 22px 8%; }
 .is-narrow .full__cap { top: 24px; }
 
 /* Opening instantly (deep link, "skip to the work") shows the pages right away. */

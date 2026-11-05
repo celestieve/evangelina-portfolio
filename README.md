@@ -23,11 +23,21 @@ The dev server also prints a **Network** address: open that on your phone (same 
 | Book logic: routing, cover animation, page turns | `src/App.jsx` |
 | Left/right page layouts | `src/components/LeftPage.jsx`, `RightPage.jsx` |
 | Before/after slider, image galleries | `src/components/CompareSlider.jsx`, `FullSpread.jsx` |
-| Images, resume PDF, favicon | `public/assets/`, `public/favicon.svg` |
+| Original images (edit these) | `images/` |
+| Optimized images (generated), resume PDF, favicon | `public/assets/`, `public/favicon.svg` |
+
+### Adding or changing images
+
+Put the original (JPG, PNG or WebP) in `images/`, then run:
+
+```bash
+npm run images
+```
+
+This writes a compressed full-size `.webp` (used by the lightbox) plus an 800px version for phones into `public/assets/`, and records each image's size in `src/image-sizes.json`. In `src/data.js`, refer to the image by its new name, e.g. `asset('vtask-3.webp')`. Commit both the original and the generated files.
 
 ### To-dos before going live
 
-- The 8 **studio art** frames show "artwork coming soon". Drop images into `public/assets/` and set `src: asset('your-file.jpg')` on each item in `STUDIO_ART` in `src/data.js`.
 - Optional: set `ALWAYS_INTRO = false` in `src/App.jsx` to skip the cover animation for returning visitors.
 
 ## Pages (hash routes)
@@ -43,7 +53,7 @@ Layouts to know about:
 - **Wider than 760px (landscape):** two-page spread that fills the window.
 - **Phones, and tablets held upright (≤1100px portrait):** pages stack and scroll; galleries become separate pages; nav sits above the book.
 
-**Automated screenshots** (6 widths × 10 pages, plus a check for sideways scrolling):
+**Automated screenshots** (6 widths × 9 pages, plus a check for sideways scrolling):
 
 ```bash
 npm i -D playwright
