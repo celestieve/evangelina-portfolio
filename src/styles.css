@@ -332,6 +332,7 @@ img { display: block; max-width: 100%; }
   width: 100vw; height: 100vh; height: 100dvh; max-width: none; max-height: none;
   margin: 0; padding: 56px 72px 28px; border: 0; background: transparent;
   display: none; align-items: center; justify-content: center;
+  pointer-events: auto; /* gallery spreads set pointer-events: none, which the dialog would inherit */
 }
 .lightbox[open] { display: flex; animation: lightbox-in .2s ease-out; }
 .lightbox::backdrop { background: rgba(30, 36, 29, .86); }
